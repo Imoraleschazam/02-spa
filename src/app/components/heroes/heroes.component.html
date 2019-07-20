@@ -3,41 +3,8 @@
 
 <div class="card-columns">
 
-  <div class="card animated fadeIn fast" *ngFor="let heroe of heroes; let k = index">
-    <img class="card-img-top img-fluid" [src]="heroe.img" [alt]="heroe.nombre">
-    <div class="card-body">
-      <h5 class="card-title">{{ heroe.nombre }}</h5>
-      <p class="card-text">{{ heroe.bio }}</p>
-      <p class="card-text"><small class="text-muted">{{ heroe.aparicion }}</small></p>
-
-      <button (click)="verHeroe(k)"
-      type="button" class="btn btn-outline-primary btn-block">
-        ver mas...
-      </button>
-
-      <!-- <a [routerLink]="['/heroe',i]" class="btn btn-outline-primary">ver mas link...</a>
-
-    </div>
-  </div> -->
-
-  <!--<div class="card">
-    <img class="card-img-top" src="assets/img/batman.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>-->
-
-<!--  <div class="card">
-    <img class="card-img-top" src="assets/img/linterna-verde.png" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
-  </div>-->
-
-
+<!-- *ngFor="let heroe of heroes; let k = index"> -->
+<app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe]="foo" [index]="i" *ngFor="let foo of heroes; let i = index"></app-heroe-tarjeta>
+<!-- recibir el evento  -->
 
 </div>
